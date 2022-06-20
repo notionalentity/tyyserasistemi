@@ -74,8 +74,12 @@ void loop() {
   if (isnan(sicaklik) || isnan(nem) || isnan(f)) {
     Serial.println(F("DHT HATA 01"));
     lcd.setCursor(0,0);
-    lcd.print("DHT ERR 01");
+    lcd.print("DHT CRITICAL 01");
     return;
+  }
+  
+  if(isnan(gazDeger)) {
+    lcd.print("MQ CRITICAL 01")
   }
 
   Serial.print("Nem:");

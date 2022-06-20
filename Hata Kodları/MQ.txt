@@ -1,0 +1,1 @@
+MQ CRITICAL 01: Gaz sensörü ile Arduino arasında haberleşme sıkıntısı vardır. Devreyi kontrol edin.

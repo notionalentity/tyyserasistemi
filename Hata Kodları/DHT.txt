@@ -1,0 +1,1 @@
+DHT CRITICAL 01 : Devrede sıkıntı vardır, haberleşme sağlanamıyordur. Devrenizi kontrol edin.
