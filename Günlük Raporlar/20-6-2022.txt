@@ -1,0 +1,4 @@
+Alarm sistemi için test yapıldı, akım yetersiz olduğundan dolayı alarm sistemi çıkarıldı.
+LCD ekran üzerinden uyarı yapılmaya karar verildi.
+
+Ekstra not: Serada herhangi birşey olacağını sanmıyorum.
