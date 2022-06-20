@@ -4,6 +4,7 @@
 //Selamlar!
 //Eğlence için geliştirdiğimiz sera sistemini, herkese açık paylaşmaya karar verdik.
 //Gönlünüzce kullanıp değiştirebilirsiniz!
+//Versiyon: Alpha
 
 // TYY Ekibi
 
@@ -27,7 +28,6 @@
 //burada dht için gerekli ayarlamaları yaptık.
 DHT dht(DHTPIN, DHTTYPE);
 
-int buzzerPin = 8;
 int dhtPin = 9;
 
 int esikDegeri = 400;
@@ -42,6 +42,9 @@ void setup() {
   dht.begin();
   lcd.begin(16,2);
   lcd.print("TYY Sera Sistemleri");
+  delay(3000);
+  lcd.clear();
+  lcd.print("Ver: Alpha")
   pinMode(buzzerPin, OUTPUT);
 }
 
@@ -53,17 +56,15 @@ void loop() {
   //gaz sensörü kontrol
   if(gazDeger > esikDegeri){
     lcd.clear();
-    digitalWrite(buzzerPin,HIGH);
     lcd.setCursor(0,0);
     lcd.print("GAZ KACAGI");
     delay(100);
-    digitalWrite(buzzerPin,LOW);
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("GAZ KACAGI");
   }
   else{
-    digitalWrite(buzzerPin,LOW);
+      Serial.print("Gaz kaçağı bulunmamakta. Tebrikler! Seranızı iyi koruyorsunuz.")
   }
   
 
@@ -72,7 +73,7 @@ void loop() {
   float f = dht.readTemperature(true);  
 
   if (isnan(sicaklik) || isnan(nem) || isnan(f)) {
-    Serial.println(F("DHT HATA 01"));
+    Serial.println(F("DHT CRITICAL 01"));
     lcd.setCursor(0,0);
     lcd.print("DHT CRITICAL 01");
     return;
@@ -80,14 +81,16 @@ void loop() {
   
   if(isnan(gazDeger)) {
     lcd.print("MQ CRITICAL 01")
+    Serial.println("MQ CRITICAL 01")
   }
-
+  // logging islemi
   Serial.print("Nem:");
   Serial.print(nem);
   Serial.print("Sicaklik:");
   Serial.print(sicaklik);
   Serial.print("________");
 
+  // lcd ekrana dht22den gelen degerler yaziliyor
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("Nem Orani:");
@@ -99,8 +102,6 @@ void loop() {
   lcd.setCursor(9,1);
   lcd.print((float)sicaklik);
 
-  
- 
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("Nem Orani:");
