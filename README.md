@@ -3,6 +3,10 @@
 Eğlencesine başladığımız bu sistemi, sizlerle paylaşmaya karar verdik.
 Arduino ile yazılmış geniş sera sistemi.
 Gönlünüzce kullanıp değiştirebilirsiniz!
+
+Ekstra Not: Bu sistemi birkaç gün içinde bitirmemiz gerekti. Eğlencesine başladık fakat işler ciddi hale gelince biraz daha geliştirmeye karar verdik. Maalesef ki sistemin biraz yetersiz olduğunu düşünüyorum. Alarm sistemini bile sistem içerisine yerleştiremedik. Son olarak 1 haftamız var, bize şans dileyin lütfen!!!
+
+Yaşlarımız da küçük olduğu için (yani tecrübemiz yok, benim yaşım 12 daha yeni yeni arduino'ya başlayabildim) ayrı bir zorluğu var. Üstelik bunlar sadece kodlar, hiçbir şekilde doğru dürüst parçaları yerleştiremedim. 1 hafta çok az bir süre.
 # KURULUM 
 
 Bilgisayarınıza Arduino IDE'yi kurun.
